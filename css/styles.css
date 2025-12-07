@@ -390,3 +390,124 @@ main {
   background-color: var(--color-red-dark);
   text-decoration: none;
 }
+/* ========= INFO CARDS (SEASONAL + CHAT) ========= */
+
+.info-section {
+  padding: 2.5rem var(--spacing-page) 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: var(--color-white);
+}
+
+/* Et kort */
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  text-align: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tittel */
+.info-title {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* Undertekst ("Updated every week") */
+.info-accent {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  margin-top: -0.5rem;
+}
+
+/* Bildekonteiner */
+.info-image {
+  width: 100%;
+  height: 240px;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Bytt disse senere med faktiske bilder */
+.info-image--seasonal {
+  background-image: url("../assets/img/seasonal-placeholder.jpg");
+}
+
+.info-image--chat {
+  background-image: url("../assets/img/chat-placeholder.jpg");
+}
+
+/* Brødtekst */
+.info-body {
+  font-size: 1rem;
+  max-width: 45ch;
+  line-height: 1.55;
+  margin: 0 auto;
+}
+
+/* Knapp */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red-dark);
+  text-decoration: none;
+}
+
+/* DESKTOP LAYOUT: 2 kolonner med vertikal linje i midten */
+
+@media (min-width: 900px) {
+  .info-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-block: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    position: relative;
+  }
+
+  /* Den tynne linjen mellom kortene */
+  .info-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.18);
+    left: 50%;
+    transform: translateX(-0.5px);
+  }
+
+  .info-card {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .info-title {
+    font-size: 1.6rem;
+  }
+}
