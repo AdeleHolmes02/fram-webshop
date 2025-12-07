@@ -1,0 +1,392 @@
+/* ========= GLOBAL RESET & VARIABLES ========= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* respekter HTML hidden-attributt */
+[hidden] {
+  display: none !important;
+}
+
+:root {
+  --color-bg: #f7f2de;
+  --color-text: #0b0a08;
+  --color-white: #ffffff;
+  --color-red: #dc4131;
+  --color-red-dark: #ae2e21;
+  --color-blue: #e1eaf0;
+  --color-green: #098f51;
+
+  --font-sans: "Arimo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Frank Ruhl Libre", "Georgia", serif;
+
+  --radius-pill: 999px;
+  --radius-card: 24px;
+
+  --spacing-page: 1.5rem;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* Links & buttons base */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Utility classes */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-text);
+  color: var(--color-white);
+  border-radius: 4px;
+  z-index: 999;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Page layout */
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1.5rem 1rem 2rem;
+  color: rgba(11, 10, 8, 0.7);
+}
+/* ========= HEADER / NAV ========= */
+
+.site-header {
+  background-color: var(--color-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem var(--spacing-page);
+}
+
+/* Burger button */
+
+.nav-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+}
+
+/* Logo */
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 2.8rem; /* ca 75px på mobil */
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+/* Cart badge */
+
+.cart-button {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-green);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-count {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Fullscreen overlay nav (mobil) */
+
+.site-nav {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem var(--spacing-page) 2rem;
+}
+
+.nav-close {
+  align-self: flex-start;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.nav-checkout {
+  align-self: center;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-white);
+  border-radius: var(--radius-pill);
+  padding: 0.6rem 1.6rem;
+}
+
+/* Desktop: vi viser kun topplinjen, overlay-nav logikken fikser vi i JS senere */
+
+@media (min-width: 900px) {
+  .header-inner {
+    padding-block: 1rem;
+  }
+
+  .logo {
+    font-size: 4.5rem; /* ca 200px */
+  }
+}
+/* ========= HERO ========= */
+
+.hero {
+  position: relative;
+}
+
+/* Her bruker vi en placeholder-bakgrunn.
+   Bytt URL til det faktiske bildet når du legger det inn i assets/img */
+.hero-image {
+  width: 100%;
+  min-height: 60vh;
+  background-image: url("../assets/img/hero-placeholder.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay med FRAM-logo og tekst */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 2rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero-logo {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  letter-spacing: 0.18em;
+}
+
+.hero-divider {
+  display: block;
+  width: 1px;
+  height: 80px;
+  background-color: var(--color-white);
+}
+
+.hero-heading {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  max-width: 20ch;
+}
+
+/* Desktop hero-tweaks */
+
+@media (min-width: 900px) {
+  .hero-image {
+    min-height: 75vh;
+  }
+
+  .hero-logo {
+    font-size: 12.5rem; /* rundt 200px */
+  }
+
+  .hero-divider {
+    height: 120px;
+  }
+
+  .hero-heading {
+    font-size: 1.6rem;
+  }
+}
+/* ========= INFO CARDS (SEASONAL + CHAT) ========= */
+
+.info-section {
+  padding: 2.5rem var(--spacing-page) 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background-color: var(--color-white);
+}
+
+/* Desktop: to kolonner med vertikal linje mellom */
+
+@media (min-width: 900px) {
+  .info-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-block: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .info-section::before {
+    content: "";
+    position: absolute;
+  }
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.info-title {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.1rem;
+}
+
+.info-accent {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+}
+
+.info-image {
+  width: 100%;
+  border-radius: 24px;
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Bytt disse URL-ene til de faktiske bildene dine senere */
+.info-image--seasonal {
+  background-image: url("../assets/img/seasonal-placeholder.jpg");
+}
+
+.info-image--chat {
+  background-image: url("../assets/img/chat-placeholder.jpg");
+}
+
+.info-body {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Primary button – rød */
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red-dark);
+  text-decoration: none;
+}
