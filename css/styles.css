@@ -511,3 +511,108 @@ main {
     font-size: 1.6rem;
   }
 }
+/* ========= THIS IS HOW IT WORKS ========= */
+
+.how-section {
+  background-color: var(--color-bg);
+  padding: 3rem var(--spacing-page);
+}
+
+.how-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Venstre blokk (tittel) */
+
+.how-intro {
+  background-color: var(--color-bg);
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 2rem 1.75rem;
+}
+
+.how-title {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.25rem;
+}
+
+/* Høyre: steg-listen */
+
+.how-steps {
+  background-color: var(--color-bg);
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.how-step {
+  padding-block: 0.5rem;
+}
+
+.how-step-title {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+.how-step-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Linjene mellom hver seksjon */
+
+.how-steps hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  margin: 0.9rem 0;
+}
+
+/* Tekst-link ("See our stock here") */
+
+.text-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* DESKTOP LAYOUT */
+
+@media (min-width: 900px) {
+  .how-section {
+    padding-block: 5rem;
+  }
+
+  .how-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    column-gap: 3rem;
+    align-items: stretch;
+  }
+
+  .how-intro {
+    display: flex;
+    align-items: center;
+    padding: 3rem 2.5rem;
+  }
+
+  .how-title {
+    font-size: 1.7rem;
+  }
+
+  .how-steps {
+    padding-top: 0.5rem;
+  }
+}
