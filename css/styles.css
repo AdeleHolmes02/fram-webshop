@@ -616,3 +616,139 @@ main {
     padding-top: 0.5rem;
   }
 }
+/* ========= POPULAR PRODUCE ========= */
+
+.popular-section {
+  padding: 3rem var(--spacing-page);
+  background-color: var(--color-white);
+}
+
+.popular-header {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+}
+
+.popular-title {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 1.25rem;
+}
+
+/* GRID / SCROLL-KONTEINER */
+
+.popular-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+.popular-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.popular-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+}
+
+/* PRODUKTKORT */
+
+.product-card {
+  min-width: 220px;
+  max-width: 260px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Bildet */
+
+.product-image {
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Sett inn faktiske bilder senere */
+.product-image--oats {
+  background-image: url("../assets/img/oats-placeholder.jpg");
+}
+
+.product-image--potatoes {
+  background-image: url("../assets/img/potatoes-placeholder.jpg");
+}
+
+.product-image--carrots {
+  background-image: url("../assets/img/carrots-placeholder.jpg");
+}
+
+/* Add to basket-knapp */
+
+.product-add {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background-color: #000000;
+  color: var(--color-white);
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.product-add:hover {
+  opacity: 0.8;
+}
+
+/* Tekst under bildet */
+
+.product-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 0.95rem;
+}
+
+.product-size {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* DESKTOP: 3-kolonne grid i stedet for scroll */
+
+@media (min-width: 900px) {
+  .popular-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    overflow: visible;
+  }
+
+  .product-card {
+    min-width: 0;
+  }
+}
