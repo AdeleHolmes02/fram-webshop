@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fram – Home Delivery From Your Local Farms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Fonts (Arimo + Frank Ruhl Libre) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600&family=Frank+Ruhl+Libre:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ================= HEADER / NAV ================= -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Mobile menu button -->
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="sr-only">Open navigation</span>
+          ☰
+        </button>
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">FRAM</a>
+
+        <!-- Cart badge/button -->
+        <button class="cart-button" aria-label="View basket">
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+
+      <!-- Fullscreen nav (for PRODUCTS / CHAT / CHECKOUT) -->
+      <nav id="site-nav" class="site-nav" hidden>
+        <button class="nav-close" aria-label="Close navigation">
+          ✕
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="products.html">PRODUCTS</a></li>
+          <li><a href="#chat">CHAT</a></li>
+        </ul>
+
+        <a href="#checkout" class="nav-checkout">CHECKOUT</a>
+      </nav>
+    </header>
+
+    <!-- ================ MAIN CONTENT ================== -->
+    <main id="main-content">
+      <!-- ========== HERO SECTION ========== -->
+      <section class="hero" aria-label="Fram home delivery">
+        <div
+          class="hero-image"
+          role="img"
+          aria-label="Mountain landscape representing Norwegian nature"
+        ></div>
+
+        <div class="hero-overlay">
+          <span class="hero-logo">FRAM</span>
+          <span class="hero-divider" aria-hidden="true"></span>
+          <h1 class="hero-heading">
+            HOME DELIVERY FROM YOUR LOCAL FARMS
+          </h1>
+        </div>
+      </section>
+
+      <!-- ========== TWO INFO CARDS (SEASONAL + CHAT) ========== -->
+      <section
+        class="info-section"
+        aria-label="Seasonal selection and chat information"
+      >
+        <article class="info-card">
+          <header>
+            <h2 class="info-title">SHOP OUR SEASONAL SELECTION</h2>
+            <p className="info-accent">Updated every week</p>
+          </header>
+          <div class="info-image info-image--seasonal"></div>
+          <p class="info-body">
+            Explore seasonal produce from local farms. Fresh, sustainable and
+            delivered straight to your door.
+          </p>
+          <a href="products.html" class="btn btn-primary">
+            Browse our selection
+          </a>
+        </article>
+
+        <article class="info-card">
+          <header>
+            <h2 class="info-title">ASK US ABOUT ANYTHING</h2>
+            <p class="info-accent">All your questions answered</p>
+          </header>
+          <div class="info-image info-image--chat"></div>
+          <p class="info-body">
+            Curious about where your food comes from, delivery options or our
+            sustainability practices? Just ask us in the chat.
+          </p>
+          <a href="#chat" class="btn btn-primary">
+            Go to chat
+          </a>
+        </article>
+      </section>
+
+      <!-- ========== HOW IT WORKS ========== -->
+      <section class="how-section" aria-labelledby="how-heading">
+        <div class="how-layout">
+          <div class="how-intro">
+            <h2 id="how-heading" class="how-title">THIS IS HOW IT WORKS</h2>
+          </div>
+
+          <div class="how-steps">
+            <article class="how-step">
+              <h3 class="how-step-title">ORDER GROCERIES</h3>
+              <p class="how-step-body">
+                Choose seasonal produce directly from our partner farms and add
+                them to your basket.
+              </p>
+              <a href="products.html" class="text-link">
+                See our stock here
+              </a>
+            </article>
+
+            <hr />
+
+            <article class="how-step">
+              <h3 class="how-step-title">STOCK UP</h3>
+              <p class="how-step-body">
+                Your groceries are delivered in reusable containers that fit
+                neatly in your fridge and pantry.
+              </p>
+            </article>
+
+            <hr />
+
+            <article class="how-step">
+              <h3 class="how-step-title">SCAN &amp; REORDER</h3>
+              <p class="how-step-body">
+                Scan the QR-codes on your containers to quickly reorder your
+                favourites when you are running low.
+              </p>
+            </article>
+
+            <hr />
+
+            <article class="how-step">
+              <h3 class="how-step-title">SWAP &amp; REUSE</h3>
+              <p class="how-step-body">
+                At your next delivery, we collect the empty containers for
+                cleaning and reuse, creating a circular system.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== POPULAR PRODUCE ========== -->
+      <section
+        class="popular-section"
+        aria-labelledby="popular-heading"
+        id="popular"
+      >
+        <div class="popular-header">
+          <h2 id="popular-heading" class="popular-title">Popular produce</h2>
+        </div>
+
+        <!-- On mobile this will be a horizontal scroll; on desktop a grid -->
+        <div class="popular-grid">
+          <article class="product-card">
+            <div class="product-image product-image--oats">
+              <button class="product-add" type="button">
+                Add to basket ↑
+              </button>
+            </div>
+            <div class="product-meta">
+              <div class="product-row">
+                <h3 class="product-name">Oats</h3>
+                <p class="product-price">16 kr / kg</p>
+              </div>
+              <p class="product-size">1 kg</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image product-image--potatoes">
+              <button class="product-add" type="button">
+                Add to basket ↑
+              </button>
+            </div>
+            <div class="product-meta">
+              <div class="product-row">
+                <h3 class="product-name">Potatoes</h3>
+                <p class="product-price">22 kr / kg</p>
+              </div>
+              <p class="product-size">1 kg</p>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image product-image--carrots">
+              <button class="product-add" type="button">
+                Add to basket ↑
+              </button>
+            </div>
+            <div class="product-meta">
+              <div class="product-row">
+                <h3 class="product-name">Carrots</h3>
+                <p class="product-price">18 kr / kg</p>
+              </div>
+              <p class="product-size">1 kg</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ========== CHATBOT PLACEHOLDER (vi bygger logikk senere) ========== -->
+      <section id="chat" class="chat-section" aria-label="Chat with Fram">
+        <div class="chat-window">
+          <ul class="chat-messages" id="chatMessages" aria-live="polite"></ul>
+
+          <p
+            id="chatStatus"
+            class="chat-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+
+          <form id="chatForm" class="chat-input-area" novalidate>
+            <label for="chatInput" class="sr-only">Type your message</label>
+            <input
+              id="chatInput"
+              name="message"
+              type="text"
+              autocomplete="off"
+              placeholder="What can we help you with today?"
+            />
+            <button
+              id="chatSendBtn"
+              type="submit"
+              class="chat-send"
+              aria-label="Send message"
+            >
+              ↑
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ========== NEWSLETTER / FOOTER SECTION ========== -->
+      <section
+        class="newsletter-section"
+        aria-label="Stay updated with Fram"
+        id="checkout"
+      >
+        <div class="newsletter-inner">
+          <div class="newsletter-header">
+            <span class="newsletter-logo">FRAM</span>
+            <hr class="newsletter-divider" />
+          </div>
+
+          <h2 class="newsletter-title">STAY UPDATED</h2>
+          <p class="newsletter-body">
+            Get updates on seasonal produce, new partner farms and tips for
+            eating more sustainably.
+          </p>
+
+          <form class="newsletter-form">
+            <label for="firstName" class="sr-only">First name</label>
+            <input
+              id="firstName"
+              type="text"
+              name="firstName"
+              placeholder="First name"
+            />
+
+            <label for="email" class="sr-only">Email address</label>
+            <div class="newsletter-email-wrapper">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email address"
+              />
+              <button type="submit" class="newsletter-submit" aria-label="Send">
+                →
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- (Liten, nøytral footer hvis du vil) -->
+    <footer class="site-footer">
+      <p>&copy; 2025 Fram. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" type="module"></script>
+    <script src="js/chatbot.js" type="module"></script>
+  </body>
+</html>
