@@ -21,18 +21,21 @@
     <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ================= HEADER / NAV ================= -->
+    <!-- HEADER / NAV -->
     <header class="site-header">
       <div class="header-inner">
         <!-- Mobile menu button -->
-        <button
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="site-nav"
-        >
-          <span class="sr-only">Open navigation</span>
-          ☰
-        </button>
+       <button
+  class="nav-toggle"
+  aria-expanded="false"
+  aria-controls="site-nav"
+>
+  <span class="sr-only">Open navigation</span>
+  <span class="nav-toggle-line"></span>
+  <span class="nav-toggle-line"></span>
+  <span class="nav-toggle-line"></span>
+</button>
+
 
         <!-- Logo -->
         <a href="index.html" class="logo">FRAM</a>
@@ -44,23 +47,32 @@
       </div>
 
       <!-- Fullscreen nav (for PRODUCTS / CHAT / CHECKOUT) -->
-      <nav id="site-nav" class="site-nav" hidden>
-        <button class="nav-close" aria-label="Close navigation">
-          ✕
-        </button>
+     <nav id="site-nav" class="site-nav" hidden>
+  <!-- venstre panel -->
+  <div class="site-nav-panel" role="dialog" aria-modal="true">
+  <div class="site-nav-header">
+    <button class="nav-close" aria-label="Close navigation">✕</button>
+  </div>
 
-        <ul class="nav-links">
-          <li><a href="products.html">PRODUCTS</a></li>
-          <li><a href="#chat">CHAT</a></li>
-        </ul>
+  <ul class="nav-links">
+    <li><a href="products.html">PRODUCTS</a></li>
+    <li><a href="#chat">CHAT</a></li>
+  </ul>
 
-        <a href="#checkout" class="nav-checkout">CHECKOUT</a>
-      </nav>
+  <a href="#checkout" class="nav-checkout">CHECKOUT</a>
+</div>
+
+
+  <!-- klikkbart “rest of screen” for å lukke -->
+  <button class="site-nav-backdrop" type="button" aria-label="Close navigation">
+  </button>
+</nav>
     </header>
 
-    <!-- ================ MAIN CONTENT ================== -->
+
+    <!-- MAIN CONTENT -->
     <main id="main-content">
-      <!-- ========== HERO SECTION ========== -->
+      <!-- HERO SECTION -->
       <section class="hero" aria-label="Fram home delivery">
         <div
           class="hero-image"
@@ -72,73 +84,92 @@
           <span class="hero-logo">FRAM</span>
           <span class="hero-divider" aria-hidden="true"></span>
           <h1 class="hero-heading">
-            HOME DELIVERY FROM YOUR LOCAL FARMS
+            Home delivery from your local farms 
           </h1>
         </div>
       </section>
 
-      <!-- ========== TWO INFO CARDS (SEASONAL + CHAT) ========== -->
-      <section
-        class="info-section"
-        aria-label="Seasonal selection and chat information"
-      >
-        <article class="info-card">
-          <header>
-            <h2 class="info-title">SHOP OUR SEASONAL SELECTION</h2>
-            <p class="info-accent">Updated every week</p>
-          </header>
-          <div class="info-image info-image--seasonal"></div>
-          <p class="info-body">
-            Explore seasonal produce from local farms. Fresh, sustainable and
-            delivered straight to your door.
-          </p>
-          <a href="products.html" class="btn btn-primary">
-            Browse our selection
-          </a>
-        </article>
+      <!-- TWO INFO CARDS (SEASONAL + CHAT) -->
+<section class="info" aria-label="Seasonal selection and chat">
+  <article class="info-card">
+    <header class="info-header">
+      <h2 class="info-title">
+        SHOP OUR  SEASONAL<br />
+        SELECTION
+      </h2>
+      <p class="info-accent">Updated every week</p>
+    </header>
 
-        <article class="info-card">
-          <header>
-            <h2 class="info-title">ASK US ABOUT ANYTHING</h2>
-            <p class="info-accent">All your questions answered</p>
-          </header>
-          <div class="info-image info-image--chat"></div>
-          <p class="info-body">
-            Curious about where your food comes from, delivery options or our
-            sustainability practices? Just ask us in the chat.
-          </p>
-          <a href="#chat" class="btn btn-primary">
-            Go to chat
-          </a>
-        </article>
-      </section>
+    <div
+      class="info-image info-image--seasonal"
+      role="img"
+      aria-label="Seasonal produce"
+    ></div>
 
-      <!-- ========== HOW IT WORKS ========== -->
+    <p class="info-text">
+      New produce is added continuously as time goes by and the seasons change.
+    </p>
+
+    <a class="info-button" href="products.html">Browse our selection</a>
+  </article>
+
+  <article class="info-card">
+    <header class="info-header">
+      <h2 class="info-title">
+        ASK US ABOUT<br />
+        ANYTHING
+      </h2>
+      <p class="info-accent">All your questions answered</p>
+    </header>
+
+    <div
+      class="info-image info-image--chat"
+      role="img"
+      aria-label="Chat about farms"
+    ></div>
+
+    <p class="info-text">
+      New produce is added continuously as time goes by and the seasons change.
+    </p>
+
+    <a class="info-button" href="#chat">Go to chat</a>
+  </article>
+</section>
+
+
+      <!-- HOW IT WORKS -->
       <section class="how-section" aria-labelledby="how-heading">
         <div class="how-layout">
           <div class="how-intro">
-            <h2 id="how-heading" class="how-title">THIS IS HOW IT WORKS</h2>
+            <h2 id="how-heading" class="how-title">
+  <span class="how-title-line">THIS IS HOW IT</span>
+  <span class="how-title-line">WORKS</span>
+</h2>
+
           </div>
 
           <div class="how-steps">
             <article class="how-step">
-              <h3 class="how-step-title">ORDER GROCERIES</h3>
-              <p class="how-step-body">
-                Choose seasonal produce directly from our partner farms and add
-                them to your basket.
-              </p>
-              <a href="products.html" class="text-link">
-                See our stock here
-              </a>
-            </article>
+  <h3 class="how-step-title">ORDER GROCERIES</h3>
+  <div class="how-step-content">
+    <p class="how-step-body">
+      Fram is a circular service that ensures your kitchen is always stocked with 
+      the essentials you need. Browse our seasonal selection, choose your items, 
+      and place your order online.
+      <a href="products.html" class="text-link">See our stock here</a>
+    </p>
+  </div>
+</article>
+
 
             <hr />
 
             <article class="how-step">
               <h3 class="how-step-title">STOCK UP</h3>
               <p class="how-step-body">
-                Your groceries are delivered in reusable containers that fit
-                neatly in your fridge and pantry.
+                Once your order arrives, unpack the produce and store it however 
+                it works best for you. Hold onto the containers—they’re yours to 
+                keep until your next order.
               </p>
             </article>
 
@@ -147,8 +178,10 @@
             <article class="how-step">
               <h3 class="how-step-title">SCAN &amp; REORDER</h3>
               <p class="how-step-body">
-                Scan the QR-codes on your containers to quickly reorder your
-                favourites when you are running low.
+                Ready for a refill? Grab the containers from your last order 
+                and scan the QR code with our app or your phone’s camera. 
+                This instantly adds the items back to your cart, making reordering 
+                a breeze.
               </p>
             </article>
 
@@ -157,158 +190,118 @@
             <article class="how-step">
               <h3 class="how-step-title">SWAP &amp; REUSE</h3>
               <p class="how-step-body">
-                At your next delivery, we collect the empty containers for
-                cleaning and reuse, creating a circular system.
+                When we deliver your new order, simply leave your empty 
+                containers outside. We’ll pick them up, clean them thoroughly, 
+                and reuse them for future deliveries.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ========== POPULAR PRODUCE ========== -->
-      <section
-        class="popular-section"
-        aria-labelledby="popular-heading"
-        id="popular"
-      >
-        <div class="popular-header">
-          <h2 id="popular-heading" class="popular-title">Popular produce</h2>
+      <!-- POPULAR PRODUCE -->
+<section class="popular-section" aria-labelledby="popular-heading" id="popular">
+  <header class="popular-header">
+    <h2 id="popular-heading" class="popular-title">POPULAR PRODUCE</h2>
+  </header>
+
+  <div class="popular-grid" role="list">
+    <!-- Card 1 -->
+    <article class="product-card" role="listitem">
+      <div class="product-image product-image--oats" role="img" aria-label="Oats">
+        <button class="product-add" type="button" aria-label="Add Oats to basket">
+          Add to basket ↑
+        </button>
+      </div>
+
+      <div class="product-meta">
+        <div class="product-row">
+          <h3 class="product-name">Oats</h3>
+          <p class="product-price">48 kr / kg</p>
         </div>
+        <p class="product-size">1 kg</p>
+      </div>
+    </article>
 
-        <!-- On mobile this will be a horizontal scroll; on desktop a grid -->
-        <div class="popular-grid">
-          <article class="product-card">
-            <div class="product-image product-image--oats">
-              <button class="product-add" type="button">
-                Add to basket ↑
-              </button>
-            </div>
-            <div class="product-meta">
-              <div class="product-row">
-                <h3 class="product-name">Oats</h3>
-                <p class="product-price">16 kr / kg</p>
-              </div>
-              <p class="product-size">1 kg</p>
-            </div>
-          </article>
+    <!-- Card 2 -->
+    <article class="product-card" role="listitem">
+      <div class="product-image product-image--red-onions" role="img" aria-label="Red onions">
+        <button class="product-add" type="button" aria-label="Add Red Onions to basket">
+          Add to basket ↑
+        </button>
+      </div>
 
-          <article class="product-card">
-            <div class="product-image product-image--potatoes">
-              <button class="product-add" type="button">
-                Add to basket ↑
-              </button>
-            </div>
-            <div class="product-meta">
-              <div class="product-row">
-                <h3 class="product-name">Potatoes</h3>
-                <p class="product-price">22 kr / kg</p>
-              </div>
-              <p class="product-size">1 kg</p>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image product-image--carrots">
-              <button class="product-add" type="button">
-                Add to basket ↑
-              </button>
-            </div>
-            <div class="product-meta">
-              <div class="product-row">
-                <h3 class="product-name">Carrots</h3>
-                <p class="product-price">18 kr / kg</p>
-              </div>
-              <p class="product-size">1 kg</p>
-            </div>
-          </article>
+      <div class="product-meta">
+        <div class="product-row">
+          <h3 class="product-name">Red Onions</h3>
+          <p class="product-price">48 kr / kg</p>
         </div>
-      </section>
+        <p class="product-size">0.5 kg</p>
+      </div>
+    </article>
 
-      <!-- ========== CHATBOT PLACEHOLDER (vi bygger logikk senere) ========== -->
-      <section id="chat" class="chat-section" aria-label="Chat with Fram">
-        <div class="chat-window">
-          <ul class="chat-messages" id="chatMessages" aria-live="polite"></ul>
+    <!-- Card 3 -->
+    <article class="product-card" role="listitem">
+      <div class="product-image product-image--garlic" role="img" aria-label="Garlic">
+        <button class="product-add" type="button" aria-label="Add Garlic to basket">
+          Add to basket ↑
+        </button>
+      </div>
 
-          <p
-            id="chatStatus"
-            class="chat-status"
-            role="status"
-            aria-live="polite"
-            hidden
-          ></p>
-
-          <form id="chatForm" class="chat-input-area" novalidate>
-            <label for="chatInput" class="sr-only">Type your message</label>
-            <input
-              id="chatInput"
-              name="message"
-              type="text"
-              autocomplete="off"
-              placeholder="What can we help you with today?"
-            />
-            <button
-              id="chatSendBtn"
-              type="submit"
-              class="chat-send"
-              aria-label="Send message"
-            >
-              ↑
-            </button>
-          </form>
+      <div class="product-meta">
+        <div class="product-row">
+          <h3 class="product-name">Garlic</h3>
+          <p class="product-price">48 kr / kg</p>
         </div>
-      </section>
+        <p class="product-size">0.2 kg</p>
+      </div>
+    </article>
+  </div>
+</section>
 
-      <!-- ========== NEWSLETTER / FOOTER SECTION ========== -->
-      <section
-        class="newsletter-section"
-        aria-label="Stay updated with Fram"
-        id="checkout"
-      >
-        <div class="newsletter-inner">
-          <div class="newsletter-header">
-            <span class="newsletter-logo">FRAM</span>
-            <hr class="newsletter-divider" />
-          </div>
+      
+      <!-- STAY UPDATED / NEWSLETTER -->
+<footer class="newsletter-section" aria-label="Stay updated with Fram">
+  <div class="newsletter-inner">
+    <header class="newsletter-top">
+      <span class="newsletter-logo">FRAM</span>
+      <span class="newsletter-line"></span>
+    </header>
 
-          <h2 class="newsletter-title">STAY UPDATED</h2>
-          <p class="newsletter-body">
-            Get updates on seasonal produce, new partner farms and tips for
-            eating more sustainably.
-          </p>
+    <div class="newsletter-content">
+      <h2 class="newsletter-title">STAY UPDATED</h2>
 
-          <form class="newsletter-form">
-            <label for="firstName" class="sr-only">First name</label>
-            <input
-              id="firstName"
-              type="text"
-              name="firstName"
-              placeholder="First name"
-            />
+      <p class="newsletter-body">
+        Sign up for our newsletter to be the first<br />
+        to know about new produce or other<br />
+        exciting news!
+      </p>
 
-            <label for="email" class="sr-only">Email address</label>
-            <div class="newsletter-email-wrapper">
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Email address"
-              />
-              <button type="submit" class="newsletter-submit" aria-label="Send">
-                →
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
+      <form class="newsletter-form">
+        <label for="firstName" class="sr-only">First name</label>
+        <input
+          id="firstName"
+          type="text"
+          name="firstName"
+          placeholder="First name"
+        />
 
-    <!-- (Liten, nøytral footer hvis du vil) -->
-    <footer class="site-footer">
-      <p>&copy; 2025 Fram. All rights reserved.</p>
-    </footer>
+        <label for="email" class="sr-only">E-mail address</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="E-mail address"
+        />
 
-    <!-- Scripts -->
-    <script src="js/main.js" type="module"></script>
-    <script src="js/chatbot.js" type="module"></script>
-  </body>
+        <button type="submit" class="newsletter-submit">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+</footer>
+<script src="js/nav.js"></script>
+
+</body>
 </html>
