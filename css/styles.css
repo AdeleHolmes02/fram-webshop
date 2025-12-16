@@ -1015,3 +1015,138 @@ main {
 .produce-image--garlic { background-image: url("../assets/garlic.png"); }
 .produce-image--potato { background-image: url("../assets/potato.png"); }
 .produce-image--carrots { background-image: url("../assets/carrots.png"); }
+
+
+
+/*  PRODUCTS: PARTNERING FARMS (EMBED MAP)  */
+
+.farms-section {
+  background: #f6f1dc;
+  border-top: 1px solid var(--color-text);
+}
+
+.farms-layout {
+  max-width: 1512px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid var(--color-text);
+}
+
+/* Left */
+.farms-text {
+  padding: 3rem var(--spacing-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px solid var(--color-text);
+}
+
+.farms-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Right */
+.farms-map-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem var(--spacing-page);
+}
+
+.farms-map-inner {
+  width: 100%;
+  max-width: 620px; /* 👈 dette styrer størrelsen på kartet */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.farms-iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Button under map */
+.farms-open {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(11, 10, 8, 0.82);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.farms-open:hover {
+  background: rgba(11, 10, 8, 0.92);
+  transform: translateY(-1px);
+}
+
+.farms-open:focus-visible {
+  outline: 3px solid rgba(11, 10, 8, 0.35);
+  outline-offset: 4px;
+}
+
+
+/* CTA */
+.farms-open {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(11, 10, 8, 0.82);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.farms-open:hover {
+  background: rgba(11, 10, 8, 0.92);
+  transform: translateY(-1px);
+}
+
+.farms-open:focus-visible {
+  outline: 3px solid rgba(11, 10, 8, 0.35);
+  outline-offset: 4px;
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .farms-layout {
+    grid-template-columns: 35% 65%;
+    min-height: 420px;
+  }
+
+  .farms-text {
+    border-bottom: none;
+    border-right: 1px solid var(--color-text);
+    padding: 0 4rem;
+  }
+
+  .farms-title {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .farms-map-wrap,
+  .farms-iframe {
+    min-height: 420px;
+  }
+}
