@@ -193,8 +193,7 @@
       </section>
     </main>
 
-    <!-- JS -->
-    <script src="js/nav.js"></script>
+
 
 <!-- PARTNERING FARMS -->
 <section class="farms-section" aria-labelledby="farms-heading">
@@ -209,30 +208,76 @@
 
   <!-- Right -->
 <div class="farms-map-wrap" aria-label="Map showing Braastad Gaard">
-  <div class="farms-map-inner">
-    <iframe
-      class="farms-iframe"
-      title="Braastad Gaard map"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps?q=Oppdalslinna%20242%2C%202740%20Roa%2C%20Norway&output=embed"
-    ></iframe>
+ <div class="farms-map-inner">
+  <iframe
+    class="farms-iframe"
+    title="Braastad Gaard map"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=Oppdalslinna%20242%2C%202740%20Roa%2C%20Norway&output=embed"
+  ></iframe>
 
-    <a
-      class="farms-open"
-      href="https://www.google.com/maps/place/Oppdalslinna+242,+2740+Roa,+Norway"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open Braastad Gaard in Google Maps"
-    >
-      Open in Google Maps →
-    </a>
-  </div>
+  <a
+    class="farms-open"
+    href="https://www.google.com/maps/place/Oppdalslinna+242,+2740+Roa,+Norway"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Open in Google Maps →
+  </a>
 </div>
-
+ </div>
 </section>
 
 
+<!-- STAY UPDATED / NEWSLETTER (Products footer) -->
+<footer class="newsletter-section newsletter-section--products" aria-label="Stay updated with Fram">
+  <div class="newsletter-inner">
+    <header class="newsletter-top">
+      <span class="newsletter-logo">FRAM</span>
+      <span class="newsletter-line"></span>
+    </header>
+
+    <div class="newsletter-content">
+      <h2 class="newsletter-title">STAY UPDATED</h2>
+
+      <p class="newsletter-body">
+        Sign up for our newsletter to be the first to<br />
+        know about new produce or other exciting<br />
+        news!
+      </p>
+
+      <form class="newsletter-form newsletter-form--products">
+        <label for="firstNameProducts" class="sr-only">First name</label>
+        <input
+          id="firstNameProducts"
+          type="text"
+          name="firstName"
+          placeholder="First name"
+        />
+
+        <label for="emailProducts" class="sr-only">E-mail address</label>
+
+        <div class="newsletter-email-wrap">
+          <input
+            id="emailProducts"
+            type="email"
+            name="email"
+            placeholder="E-mail address"
+          />
+
+          <button type="submit" class="newsletter-arrow" aria-label="Submit newsletter sign up">
+            →
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</footer>
+
+
+<!-- JS -->
+    <script src="js/nav.js"></script>
 
   </body>
 </html>
