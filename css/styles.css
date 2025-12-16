@@ -859,3 +859,159 @@ main {
     max-width: 460px;
   }
 }
+
+
+
+
+/*  PRODUCTS: PRODUCE SECTION  */
+
+.produce-section {
+  background: var(--color-bg);
+  width: 100%;
+}
+
+.produce-inner {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 2.25rem var(--spacing-page) 2.75rem;
+}
+
+.produce-header {
+  max-width: 520px;
+  margin-bottom: 1.75rem;
+}
+
+.produce-title {
+  margin: 0 0 0.8rem;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.produce-lead {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(11, 10, 8, 0.75);
+}
+
+.produce-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.produce-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.produce-image {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.produce-add {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+
+  height: 26px;
+  padding: 0 0.75rem;
+
+  border-radius: 999px;
+  background: rgba(11, 10, 8, 0.85);
+  color: var(--color-white);
+
+  font-size: 0.7rem;
+  font-weight: 400;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.produce-add:hover {
+  background: rgba(11, 10, 8, 0.93);
+  transform: translateY(-1px);
+}
+.produce-add:active {
+  transform: translateY(0);
+}
+
+.produce-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.produce-name {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.produce-price {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.produce-size {
+  margin: 0.25rem 0 0;
+  font-size: 0.75rem;
+  color: rgba(11, 10, 8, 0.65);
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .produce-inner {
+    padding: 3rem 5rem 3.5rem;
+  }
+
+  .produce-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .produce-title {
+    font-size: 1.05rem;
+  }
+
+  .produce-lead {
+    font-size: 0.8rem;
+    max-width: 80ch;
+  }
+
+  .produce-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .produce-image {
+    border-radius: 20px;
+  }
+
+  .produce-add {
+    right: 1rem;
+    bottom: 1rem;
+    height: 28px;
+    font-size: 0.72rem;
+  }
+}
+
+/* Background images */
+.produce-image--oats { background-image: url("../assets/oats.png"); }
+.produce-image--red-onions { background-image: url("../assets/red-onions.png"); }
+.produce-image--garlic { background-image: url("../assets/garlic.png"); }
+.produce-image--potato { background-image: url("../assets/potato.png"); }
+.produce-image--carrots { background-image: url("../assets/carrots.png"); }

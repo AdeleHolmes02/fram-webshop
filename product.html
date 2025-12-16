@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fram – Produce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600&family=Frank+Ruhl+Libre:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Main styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- HEADER / NAV (same as landing page) -->    
+     <header class="site-header">
+      <div class="header-inner">
+        <!-- Burger -->
+        <button
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="sr-only">Open navigation</span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+
+        <!-- Logo -->
+        <a href="index.html" class="logo">FRAM</a>
+
+        <!-- Cart -->
+        <button class="cart-button" aria-label="View basket">
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+
+      <!-- Fullscreen nav -->
+      <nav id="site-nav" class="site-nav" hidden>
+        <div class="site-nav-panel" role="dialog" aria-modal="true">
+          <div class="site-nav-header">
+            <button class="nav-close" aria-label="Close navigation">✕</button>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="product.html">PRODUCTS</a></li>
+            <li><a href="#chat">CHAT</a></li>
+          </ul>
+
+          <a href="#checkout" class="nav-checkout">CHECKOUT</a>
+        </div>
+
+        <button
+          class="site-nav-backdrop"
+          type="button"
+          aria-label="Close navigation"
+        ></button>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main id="main-content">
+      <!-- PRODUCE SECTION -->
+      <section class="produce-section" aria-labelledby="produce-heading">
+        <div class="produce-inner">
+          <header class="produce-header">
+            <h1 id="produce-heading" class="produce-title">PRODUCE</h1>
+            <p class="produce-lead">
+              Explore our selection of seasonal produce, sourced directly from
+              local farms to ensure peak freshness and quality. Every item is
+              chosen with care, supporting sustainable practices and bringing
+              the best of the harvest to your table.
+            </p>
+          </header>
+
+          <div class="produce-grid" role="list">
+            <!-- Oats -->
+            <article class="produce-card" role="listitem">
+              <div
+                class="produce-image produce-image--oats"
+                role="img"
+                aria-label="Oats"
+              >
+                <button class="produce-add" type="button">
+                  Add to basket ↑
+                </button>
+              </div>
+
+              <div class="produce-meta">
+                <div class="produce-row">
+                  <h2 class="produce-name">Oats</h2>
+                  <p class="produce-price">16 kr / kg</p>
+                </div>
+                <p class="produce-size">1 kg</p>
+              </div>
+            </article>
+
+            <!-- Red Onions -->
+            <article class="produce-card" role="listitem">
+              <div
+                class="produce-image produce-image--red-onions"
+                role="img"
+                aria-label="Red onions"
+              >
+                <button class="produce-add" type="button">
+                  Add to basket ↑
+                </button>
+              </div>
+
+              <div class="produce-meta">
+                <div class="produce-row">
+                  <h2 class="produce-name">Red Onions</h2>
+                  <p class="produce-price">45 kr / kg</p>
+                </div>
+                <p class="produce-size">1 kg</p>
+              </div>
+            </article>
+
+            <!-- Garlic -->
+            <article class="produce-card" role="listitem">
+              <div
+                class="produce-image produce-image--garlic"
+                role="img"
+                aria-label="Garlic"
+              >
+                <button class="produce-add" type="button">
+                  Add to basket ↑
+                </button>
+              </div>
+
+              <div class="produce-meta">
+                <div class="produce-row">
+                  <h2 class="produce-name">Garlic</h2>
+                  <p class="produce-price">38 kr</p>
+                </div>
+                <p class="produce-size">0.2 kg</p>
+              </div>
+            </article>
+
+            <!-- Potato -->
+            <article class="produce-card" role="listitem">
+              <div
+                class="produce-image produce-image--potato"
+                role="img"
+                aria-label="Potato"
+              >
+                <button class="produce-add" type="button">
+                  Add to basket ↑
+                </button>
+              </div>
+
+              <div class="produce-meta">
+                <div class="produce-row">
+                  <h2 class="produce-name">Potato</h2>
+                  <p class="produce-price">32 kr / kg</p>
+                </div>
+                <p class="produce-size">1 kg</p>
+              </div>
+            </article>
+
+            <!-- Carrots -->
+            <article class="produce-card" role="listitem">
+              <div
+                class="produce-image produce-image--carrots"
+                role="img"
+                aria-label="Carrots"
+              >
+                <button class="produce-add" type="button">
+                  Add to basket ↑
+                </button>
+              </div>
+
+              <div class="produce-meta">
+                <div class="produce-row">
+                  <h2 class="produce-name">Carrots</h2>
+                  <p class="produce-price">48 kr / kg</p>
+                </div>
+                <p class="produce-size">1 kg</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script src="js/nav.js"></script>
+  </body>
+</html>

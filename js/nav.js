@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.querySelector(".nav-close");
   const backdrop = document.querySelector(".site-nav-backdrop");
 
-  // Hvis noe ikke finnes, logg det (så du ser feilen i Console)
+  
   if (!nav || !toggle || !closeBtn || !backdrop) {
     console.warn("Nav elements missing:", { nav, toggle, closeBtn, backdrop });
     return;
