@@ -70,7 +70,7 @@ The project reflects how developers create value by making thoughtful technical 
 
 ### Frontend
 
-The frontend is static and can be opened directly in a browser, or served locally:
+The frontend is fully static and can be viewed by opening `index.html` directly in a web browser.
 
 ```bash
 npx serve .
