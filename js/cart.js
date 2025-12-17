@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const STORAGE_KEY = "fram_cart_count";
 
-  // 1) Tøm KUN hvis siden ble reloaded
+  // 1) 
   const nav = performance.getEntriesByType("navigation")[0];
   if (nav && nav.type === "reload") {
     localStorage.removeItem(STORAGE_KEY);
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Init
   setCount(getCount());
 
-  // 2) Legg til fra både landing (product-add) og products (produce-add)
+  // 2) 
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".product-add, .produce-add");
     if (!btn) return;
@@ -31,6 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setCount(getCount() + 1);
   });
 
-  // 3) Tøm-funksjon (hvis du vil bruke en knapp senere)
+  // 3) 
   window.resetCart = () => setCount(0);
 });

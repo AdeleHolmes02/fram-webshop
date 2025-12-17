@@ -1,6 +1,4 @@
-/* -------------------------------------------------------
-   FRAM Chatbot – FINAL CSS (bottom-aligned + real scroll)
--------------------------------------------------------- */
+/*  FRAM Chatbot – FINAL CSS (bottom-aligned + real scroll)  */
 
 /* Prevent global main flex from interfering on chatbot page */
 .chatbot-page main#main-content {
@@ -29,7 +27,7 @@
   background-image: url("../assets/hero-placeholder.png");
   background-size: cover;
   background-position: center;
-  pointer-events: none; /* never steal scroll/touch */
+  pointer-events: none; 
 }
 
 /* Chat card */
@@ -52,16 +50,16 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
-  min-height: 0;     /* CRITICAL */
-  overflow: hidden;  /* CRITICAL */
+  min-height: 0;     
+  overflow: hidden;  
   padding: 1.3rem 1.2rem 1rem;
 }
 
-/* ✅ The conversation scroll container */
+/*  The conversation scroll container  */
 .chat-messages {
-  flex: 1 1 auto;    /* CRITICAL */
-  min-height: 0;     /* CRITICAL */
-  overflow-y: auto;  /* scrolling happens here */
+  flex: 1 1 auto;   
+  min-height: 0;     
+  overflow-y: auto;  
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
@@ -73,7 +71,7 @@
   padding-right: 0.25rem;
 }
 
-/* ✅ Spacer pushes messages down when there are few,
+/*  Spacer pushes messages down when there are few,
       without breaking scroll when there are many */
 .chat-messages::before {
   content: "";
@@ -103,7 +101,7 @@
 
 .chat-bubble {
   display: inline-block;
-  max-width: 290px;
+  max-width: 260px;
 
   padding: 1rem 1.2rem;
   border-radius: 22px;
@@ -124,7 +122,7 @@
 }
 
 .chat-row--user .chat-name {
-  opacity: 0; /* keep spacing but hide label */
+  opacity: 0; 
 }
 
 .chat-row--user .chat-bubble {
@@ -175,7 +173,7 @@
 
 .chat-composer-row {
   display: flex;
-  align-items: flex-end; /* send button sits “top-right” */
+  align-items: flex-end; 
   gap: 1.1rem;
 }
 
@@ -195,7 +193,7 @@
   line-height: 1.25;
   outline: none;
 
-  overflow-y: hidden; /* JS toggles to auto if needed */
+  overflow-y: hidden; 
 }
 
 /* Send */
@@ -227,9 +225,7 @@
   transform: translateY(-1px);
 }
 
-/* -------------------------------------------------------
-   Scrollbar auto-hide (show only while scrolling)
--------------------------------------------------------- */
+/*  Scrollbar auto-hide (show only while scrolling)  */
 
 /* Firefox: hide by default */
 .chat-messages { scrollbar-width: none; }
@@ -237,7 +233,7 @@
 /* Chrome/Safari */
 .chat-messages::-webkit-scrollbar { width: 10px; }
 .chat-messages::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0); /* hidden by default */
+  background: rgba(0, 0, 0, 0); 
   border-radius: 999px;
   border: 3px solid transparent;
   background-clip: content-box;

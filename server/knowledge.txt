@@ -1,0 +1,60 @@
+FRAM – KUNDESERVICEKUNNSKAP
+
+OM FRAM
+FRAM er en norsk nettbasert tjeneste for hjemlevering av dagligvarer fra lokale gårder.
+Vi fokuserer på sesongbaserte produkter, korte verdikjeder og gjenbrukbare beholdere.
+Målet vårt er å gjøre det enkelt å handle bærekraftige matvarer i hverdagen.
+
+HVORDAN DET FUNGERER
+1. Bestill varer på nettsiden vår fra vårt sesongbaserte utvalg.
+2. Varene leveres hjem til deg i gjenbrukbare beholdere.
+3. Du bruker varene og beholder emballasjen.
+4. Når du bestiller på nytt, leverer du tom emballasje tilbake.
+5. Vi vasker og gjenbruker beholderne.
+
+PRODUKTER
+Utvalget vårt varierer etter sesong.
+Eksempler på produkter vi tilbyr:
+- Oats (havre)
+- Red onions (rødløk)
+- Garlic (hvitløk)
+- Potato (poteter)
+- Carrots (gulrøtter)
+
+Alle produkter er ferske råvarer levert fra lokale samarbeidsgårder.
+Prisene vises per produkt på nettsiden.
+
+LEVERING
+- Levering skjer til privatadresse.
+- Leveringstid og tilgjengelige dager vises ved bestilling.
+- Dersom levering ikke kan gjennomføres, vil kunden bli kontaktet.
+
+RETUR OG EMBALLASJE
+- FRAM bruker gjenbrukbar emballasje.
+- Tom emballasje returneres ved neste levering.
+- Emballasjen må være tømt for matrester.
+- Manglende retur kan føre til gebyr i fremtiden (test-policy).
+
+BETALING
+- Betaling skjer via nett ved bestilling.
+- Vanlige betalingsmetoder kan være kort eller digitale betalingstjenester.
+- Bestillingen bekreftes når betaling er gjennomført.
+
+ANGRERETT OG AVBESTILLING
+- Bestillinger kan endres eller avbestilles innen en viss frist før levering.
+- Etter at bestillingen er sendt til pakking, kan den ikke avbestilles.
+- Dette er en test-nettside, så detaljer kan variere.
+
+PARTNERING FARMS
+FRAM samarbeider med lokale gårder.
+Eksempel på samarbeidsgård:
+- Braastad Gaard, Oppdalslinna 242, Roa, Norge
+
+KUNDESERVICE
+- Chatten er ment for generelle spørsmål om produkter, levering og hvordan FRAM fungerer.
+- Hvis et spørsmål ikke kan besvares, skal kunden få beskjed om at saken må undersøkes videre.
+
+VIKTIG RETNINGSLINJE FOR CHATBOT
+- Chatboten skal kun svare basert på denne informasjonen.
+- Hvis brukeren spør om noe som ikke står her, skal chatboten svare:
+  "Det er jeg ikke helt sikker på ennå, men jeg kan gjerne hjelpe deg videre."

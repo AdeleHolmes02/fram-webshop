@@ -1,0 +1,11 @@
+{
+  "name": "fram-chat-api",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.19.2",
+    "openai": "^4.0.0"
+  }
+}

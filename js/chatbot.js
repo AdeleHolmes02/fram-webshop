@@ -13,28 +13,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const BOT_LABEL = "FRAM";
   const TEXTAREA_MAX_PX = 160;
 
-  // Use × instead of ✕ (much more consistent size across fonts)
   const ICON_SEND = "↑";
   const ICON_CANCEL = "×";
 
+  // Backend endpoint (lokalt)
+  const API_URL = "http://localhost:3001/api/chat";
+
   let isBusy = false;
 
-  /* ------------------------- HELPERS ------------------------- */
+  /* HELPERS */
   function normalize(text) {
     return text.trim().replace(/[ \t]+/g, " ");
   }
 
-  function showError(show) {
+  function showError(show, msg = "") {
     if (!errorEl) return;
     errorEl.hidden = !show;
+    if (msg) errorEl.textContent = msg;
   }
 
   function setBusy(state) {
     isBusy = state;
     inputEl.disabled = state;
 
-    // Force consistent sizing regardless of glyph differences
-    sendIconEl.style.fontSize = ""; // keep CSS as source of truth (chat-send-icon)
+    sendIconEl.style.fontSize = "";
     sendIconEl.textContent = state ? ICON_CANCEL : ICON_SEND;
   }
 
@@ -67,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inputEl.focus({ preventScroll: true });
   }
 
-  /* ------------------------- MESSAGE RENDERING ------------------------- */
+  /* MESSAGE RENDERING */
   function createRow(role, contentEl, { isTyping = false } = {}) {
     const row = document.createElement("div");
     row.className = `chat-row chat-row--${role}`;
@@ -117,25 +119,33 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typingRow) typingRow.remove();
   }
 
-  /* ------------------------- BOT LOGIC (PLACEHOLDER) ------------------------- */
-  function botReply(userText) {
-    const t = userText.toLowerCase();
-    if (t.includes("farm") || t.includes("farms")) {
-      return "We work with selected local farms across Norway, chosen for quality, transparency and sustainable practices.";
+  /* AI CALL */
+  async function askFram(userText) {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: userText }),
+    });
+
+    // Prøv å parse body uansett status (serveren sender json ved feil også)
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      // 429 osv → bruk message fra server hvis den finnes
+      const msg = data?.message || "Chat er midlertidig utilgjengelig. Prøv igjen senere.";
+      throw new Error(msg);
     }
-    if (t.includes("delivery") || t.includes("deliver")) {
-      return "Delivery is currently planned weekly. Live delivery tracking will be added later.";
-    }
-    return "Thanks! I’m a demo chat for now, but the interface is ready for a real API.";
+
+    return data.reply || "";
   }
 
-  /* ------------------------- RESET (always fresh chat) ------------------------- */
+  /* RESET (always fresh chat) */
   function startFreshChat() {
     messagesEl.innerHTML = "";
     showError(false);
     setBusy(false);
 
-    addTextMessage("bot", "What can I help you with today?");
+    addTextMessage("bot", "Hei! Hva kan jeg hjelpe deg med i dag?");
     resetTextarea();
     autoResizeTextarea();
 
@@ -143,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => focusInput(), 0);
   }
 
-  /* ------------------------- Scrollbar auto-hide toggle ------------------------- */
+  /* Scrollbar auto-hide toggle */
   let scrollHideTimer = null;
 
   messagesEl.addEventListener(
@@ -158,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true }
   );
 
-  /* ------------------------- EVENTS ------------------------- */
+  /* EVENTS */
   inputEl.addEventListener("input", autoResizeTextarea);
 
   inputEl.addEventListener("keydown", (e) => {
@@ -168,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  formEl.addEventListener("submit", (e) => {
+  formEl.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (isBusy) return;
 
@@ -188,20 +198,30 @@ document.addEventListener("DOMContentLoaded", () => {
     setBusy(true);
     addTyping();
 
-  window.setTimeout(() => {
-    removeTyping();
-    addTextMessage("bot", botReply(text));
-    setBusy(false);
+    try {
+      const reply = await askFram(text);
+      removeTyping();
 
+      if (reply && reply.trim()) {
+        addTextMessage("bot", reply);
+      } else {
+        addTextMessage("bot", "Beklager — jeg fikk ikke noe svar akkurat nå. Prøv igjen.");
+      }
+    } catch (err) {
+      removeTyping();
+      showError(true, err?.message || "Chat er midlertidig utilgjengelig.");
+      addTextMessage("bot", "Chat er midlertidig utilgjengelig akkurat nå. Prøv igjen senere.");
+    } finally {
+      setBusy(false);
       requestAnimationFrame(() => scrollToBottom(shouldStick));
       focusInput();
-    }, 600);
+    }
   });
 
   window.addEventListener("pageshow", (e) => {
     if (e.persisted) startFreshChat();
   });
 
-  /* ------------------------- INIT ------------------------- */
+  /* INIT */
   startFreshChat();
 });
