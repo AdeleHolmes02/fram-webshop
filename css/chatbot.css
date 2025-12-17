@@ -1,0 +1,306 @@
+/* -------------------------------------------------------
+   FRAM Chatbot – FINAL CSS (bottom-aligned + real scroll)
+-------------------------------------------------------- */
+
+/* Prevent global main flex from interfering on chatbot page */
+.chatbot-page main#main-content {
+  display: block;
+}
+
+/* Page shell */
+.chat-shell {
+  position: relative;
+  width: 100%;
+  max-width: 1512px;
+  margin: 0 auto;
+
+  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
+
+  display: grid;
+  place-items: center;
+  padding: 1.25rem var(--spacing-page) 2rem;
+}
+
+/* Background image */
+.chat-hero {
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/hero-placeholder.png");
+  background-size: cover;
+  background-position: center;
+  pointer-events: none; /* never steal scroll/touch */
+}
+
+/* Chat card */
+.chat-card {
+  position: relative;
+  width: min(520px, 92vw);
+  height: min(670px, calc(100vh - 80px - 2rem));
+
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Body must be shrinkable for inner scroll to work */
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;     /* CRITICAL */
+  overflow: hidden;  /* CRITICAL */
+  padding: 1.3rem 1.2rem 1rem;
+}
+
+/* ✅ The conversation scroll container */
+.chat-messages {
+  flex: 1 1 auto;    /* CRITICAL */
+  min-height: 0;     /* CRITICAL */
+  overflow-y: auto;  /* scrolling happens here */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding-right: 0.25rem;
+}
+
+/* ✅ Spacer pushes messages down when there are few,
+      without breaking scroll when there are many */
+.chat-messages::before {
+  content: "";
+  flex: 1 0 auto;
+}
+
+/* Rows + labels + bubbles */
+.chat-row {
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  column-gap: 0.85rem;
+  align-items: center;
+}
+
+.chat-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.92);
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+}
+
+.chat-bubble {
+  display: inline-block;
+  max-width: 290px;
+
+  padding: 1rem 1.2rem;
+  border-radius: 22px;
+
+  font-size: 1.1rem;
+  line-height: 1.25;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.chat-bubble--bot {
+  background: #f3eed9;
+}
+
+.chat-bubble--user {
+  background: #dceaf3;
+  max-width: 100%;
+}
+
+.chat-row--user .chat-name {
+  opacity: 0; /* keep spacing but hide label */
+}
+
+.chat-row--user .chat-bubble {
+  margin-left: auto;
+}
+
+/* Typing dots */
+.chat-typing {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 0.15rem 0;
+}
+
+.chat-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(11, 10, 8, 0.55);
+  animation: chatDot 1.1s infinite ease-in-out;
+}
+
+.chat-dot:nth-child(2) { animation-delay: 0.15s; }
+.chat-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes chatDot {
+  0%, 100% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(-3px); opacity: 0.95; }
+}
+
+/* Error banner */
+.chat-error {
+  margin: 0 1.2rem 0.75rem;
+  border: 1px solid rgba(220, 65, 49, 0.75);
+  color: rgba(220, 65, 49, 0.95);
+  background: rgba(220, 65, 49, 0.06);
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Composer */
+.chat-composer {
+  flex: 0 0 auto;
+  padding: 0 1.2rem 1.2rem;
+}
+
+.chat-composer-row {
+  display: flex;
+  align-items: flex-end; /* send button sits “top-right” */
+  gap: 1.1rem;
+}
+
+/* Textarea (auto-grow friendly) */
+.chat-input {
+  flex: 1;
+  min-height: 74px;
+  max-height: 160px;
+
+  resize: none;
+  border: none;
+  border-radius: 22px;
+  background: #dceaf3;
+
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  outline: none;
+
+  overflow-y: hidden; /* JS toggles to auto if needed */
+}
+
+/* Send */
+.chat-send {
+  width: 76px;
+  height: 56px;
+  border-radius: 22px;
+
+  background: var(--color-red);
+  color: #fff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.chat-send:hover {
+  background: var(--color-red-dark);
+  transform: translateY(-1px);
+}
+
+.chat-send:active { transform: translateY(0); }
+
+.chat-send-icon {
+  font-size: 2rem;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+/* -------------------------------------------------------
+   Scrollbar auto-hide (show only while scrolling)
+-------------------------------------------------------- */
+
+/* Firefox: hide by default */
+.chat-messages { scrollbar-width: none; }
+
+/* Chrome/Safari */
+.chat-messages::-webkit-scrollbar { width: 10px; }
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0); /* hidden by default */
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.chat-messages.is-scrolling { scrollbar-width: thin; }
+.chat-messages.is-scrolling::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.35);
+}
+.chat-messages.is-scrolling::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* MOBILE */
+@media (max-width: 899px) {
+  .chat-shell {
+    padding: 0;
+    place-items: stretch;
+    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
+  }
+
+  .chat-hero { display: none; }
+
+  .chat-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chat-body { padding: 1.1rem 1rem 0.9rem; }
+
+  .chat-row { grid-template-columns: 70px 1fr; }
+  .chat-name { font-size: 1.05rem; }
+
+  .chat-bubble {
+    font-size: 1.05rem;
+    padding: 0.95rem 1.1rem;
+    border-radius: 20px;
+  }
+
+  .chat-composer { padding: 0 1rem 1rem; }
+
+  .chat-input {
+    min-height: 66px;
+    max-height: 140px;
+    border-radius: 18px;
+    font-size: 1rem;
+  }
+
+  .chat-send {
+    width: 64px;
+    height: 48px;
+    border-radius: 18px;
+  }
+}
+
+/* Desktop header height smaller */
+@media (min-width: 900px) {
+  .chat-shell {
+    height: calc(100vh - 60px);
+    min-height: calc(100vh - 60px);
+    padding: 2.25rem 5rem 3rem;
+  }
+}

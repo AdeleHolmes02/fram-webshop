@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fram – Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600&family=Frank+Ruhl+Libre:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Chat styles -->
+    <link rel="stylesheet" href="css/chatbot.css" />
+  </head>
+
+  <body class="chatbot-page">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- HEADER / NAV (same as other pages) -->
+    <header class="site-header">
+      <div class="header-inner">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Open navigation</span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+        </button>
+
+        <a href="index.html" class="logo">FRAM</a>
+
+        <button class="cart-button" aria-label="View basket">
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+
+      <nav id="site-nav" class="site-nav" hidden>
+        <div class="site-nav-panel" role="dialog" aria-modal="true">
+          <div class="site-nav-header">
+            <button class="nav-close" aria-label="Close navigation">✕</button>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="product.html">PRODUCTS</a></li>
+            <li><a href="chatbot.html">CHAT</a></li>
+          </ul>
+
+          <a href="#checkout" class="nav-checkout">CHECKOUT</a>
+        </div>
+
+        <button class="site-nav-backdrop" type="button" aria-label="Close navigation"></button>
+      </nav>
+    </header>
+
+    <main id="main-content" class="chat-shell" aria-label="Chat with Fram">
+      <!-- Background image -->
+      <div class="chat-hero" role="img" aria-label="Norwegian nature background"></div>
+
+      <!-- White chat box -->
+      <section class="chat-card" aria-label="Chat window">
+        <div class="chat-body">
+          <div
+            class="chat-messages"
+            id="chatMessages"
+            role="log"
+            aria-live="polite"
+            aria-relevant="additions"
+          ></div>
+        </div>
+
+        <!-- Error banner (hidden by default) -->
+        <div class="chat-error" id="chatError" hidden>
+          Failed to connect. Wait and try again later.
+        </div>
+
+        <!-- Composer -->
+        <form class="chat-composer" id="chatForm" autocomplete="off">
+          <label for="chatInput" class="sr-only">Write your message</label>
+
+          <div class="chat-composer-row">
+            <textarea
+              id="chatInput"
+              class="chat-input"
+              placeholder=""
+              rows="1"
+              aria-label="Message"
+            ></textarea>
+
+            <button class="chat-send" id="chatSend" type="submit" aria-label="Send">
+              <span class="chat-send-icon" id="chatSendIcon">↑</span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="js/nav.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>
